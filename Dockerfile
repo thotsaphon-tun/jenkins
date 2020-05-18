@@ -15,6 +15,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
     && mv ./kubectl /usr/local/bin/kubectl
 
 RUN curl -LO https://downloads.apache.org/maven/maven-3/${MAVENVERSION}/binaries/apache-maven-${MAVENVERSION}-bin.tar.gz \
+    && mkdir -p /opt/apache-maven \
     && tar xzvf apache-maven-${MAVENVERSION}-bin.tar.gz \
                  -C /opt/apache-maven \
     && rm apache-maven-${MAVENVERSION}-bin.tar.gz
